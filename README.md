@@ -4,7 +4,7 @@
 
 1. Download ApachePOI from here: https://poi.apache.org/download.html
 2. `$ javac WordTest.java`
-3. `$ java WordTest`
+3. `$ java WordTest foo bar etc...` * the arguments will be show up on the word file.
 
 
 NOTE: You need to load files below:
