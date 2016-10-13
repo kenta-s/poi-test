@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 
 public class WordTest {
-    public static void main(String... args) throws Exception {
+    public static void main(String args[]) throws Exception {
         try (FileOutputStream out = new FileOutputStream(new File("word_test.docx"))) {
             XWPFDocument document = new XWPFDocument();
             drawTitle(document);
@@ -17,7 +17,7 @@ public class WordTest {
             drawContent3(document);
             drawContent4(document);
             pageBreak(document);
-            drawContent1(document);
+            drawContent5(document, args);
             document.write(out);
         }
     }
@@ -51,6 +51,14 @@ public class WordTest {
          try (FileInputStream image = new FileInputStream(imgFile)) {
             run.addPicture(image, XWPFDocument.PICTURE_TYPE_JPEG, imgFile, Units.toEMU(200), Units.toEMU(200)); // 200x200 pixels
          }
+    }
+    private static void drawContent5(XWPFDocument document, String args[]) {
+            for(String arg: args){
+               XWPFParagraph paragraph = document.createParagraph();
+               XWPFRun run = paragraph.createRun();
+               run.setText(arg);
+            };
+
     }
     private static void pageBreak(XWPFDocument document) {
             XWPFParagraph paragraph = document.createParagraph();
