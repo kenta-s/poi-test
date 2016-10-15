@@ -1,5 +1,8 @@
 # poi-test
 
+ApachePOI enables us to create Excel or Word files through Java code.  
+The pupose of this repository is to learn how to make Word files using ApachePOI.
+
 ## Usage
 
 1. Download ApachePOI from here: https://poi.apache.org/download.html
